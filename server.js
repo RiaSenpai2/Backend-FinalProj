@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 
 
 const Order = require('./models/Order'); // Make sure the path is correct
