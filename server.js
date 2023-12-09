@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 
 
 const Order = require('./models/Order'); // Make sure the path is correct
@@ -27,8 +27,12 @@ const Razorpay = require("razorpay");
 app.use(cors())
 app.use(bodyParser.json()); 
 // Connect to MongoDB
+
+// const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/finalProjDb'
+const dbUrl = process.env.DB_URL
+
 mongoose
-  .connect("mongodb://localhost:27017/finalProjDb", {
+  .connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

@@ -1,8 +1,10 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const Listing = require('./models/Listing'); // Replace with the path to your Listing model
 const User = require('./models/User'); // Replace with the path to your User model
 
-mongoose.connect('mongodb://localhost:27017/finalProjDb', { useNewUrlParser: true, useUnifiedTopology: true });
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/finalProjDb'
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Function to generate dates
 const generateDate = (startDay) => {
