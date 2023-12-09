@@ -171,8 +171,8 @@ app.put('/api/user/change-password', async (req, res) => {
 // ... Other routes as needed
 app.post("/order",async (req, res)=> {
   const instance = new Razorpay({
-    key_id: process.env.RAZORPAY_KEY_ID,
-    key_secret: process.env.RAZORPAY_SECRET,
+    key_id: "rzp_test_0hFrUxLaA2mPxN",
+    key_secret: "SGwjVkRYY48G7COiQhiikzmV",
 });
 
 const { v4: uuidv4 } = require('uuid');
