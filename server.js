@@ -17,13 +17,15 @@ const app = express();
 const Razorpay = require("razorpay");
 
 // Middleware
-app.use(cors({
-  origin: 'https://frontend-final-proj-l2bn.vercel.app' // Replace with your frontend's URL
-}));
-app.use(bodyParser.json());
+// app.use(cors({
+//   origin: 'https://frontend-final-proj-l2bn.vercel.app' // Replace with your frontend's URL
+// }));
+// app.use(cors({
+//   origin: 'http://localhost:3000' // Replace with your frontend's URL
+// }));
 
-
-
+app.use(cors())
+app.use(bodyParser.json()); 
 // Connect to MongoDB
 mongoose
   .connect("mongodb://localhost:27017/finalProjDb", {
