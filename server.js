@@ -17,7 +17,9 @@ const app = express();
 const Razorpay = require("razorpay");
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://frontend-final-proj-l2bn.vercel.app' // Replace with your frontend's URL
+}));
 app.use(bodyParser.json());
 
 
